@@ -3,6 +3,8 @@ import 'package:conduit/conduit.dart';
 import 'package:dart_application_conduit_example/controllers/auth_controller.dart';
 import 'package:dart_application_conduit_example/controllers/post_controller.dart';
 import 'package:dart_application_conduit_example/controllers/category_controller.dart';
+import 'package:dart_application_conduit_example/controllers/token_controller.dart';
+import 'package:dart_application_conduit_example/controllers/user_controller.dart';
 
 import 'package:dart_application_conduit_example/models/post.dart';
 import 'package:dart_application_conduit_example/models/user.dart';
@@ -24,6 +26,7 @@ class DatabaseChannel extends ApplicationChannel {
 
   @override
   Controller get entryPoint => Router()
+    ..route('/user/[:id]').link(TokenController.new)!.link(() => UserController(context))
     ..route('/category/[:id]').link(() => CategoryController(context))
     ..route('post/[:id]').link(() => PostController(context))
     ..route('token/[:refresh]').link(() => MyAuthController(context));

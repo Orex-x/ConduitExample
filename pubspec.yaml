@@ -15,6 +15,4 @@ dependencies:
 
 dev_dependencies:
   lints: ^2.0.0
-  test: ^1.16.0
-  conduit: ^4.1.6
-  jaguar_jwt: ^3.0.0
+
