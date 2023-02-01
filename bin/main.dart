@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:conduit/conduit.dart';
-import 'package:dart_application_conduit_example/DatabaseChannel.dart';
+import 'package:dart_application_conduit_example/dart_application_conduit_example.dart';
 
 
 
