@@ -12,14 +12,18 @@ class PostController extends ResourceController {
   final ManagedContext context;
 
   @Operation.get()
-  Future<Response> getAll({@Bind.query('name') String? name}) async {
-    final query = Query<Post>(context);
+  Future<Response> getAll({@Bind.query('name') String? name, @Bind.query('count') int? count = 3, @Bind.query('end') int? end = 0}) async {
+    
+    final query = Query<Post>(context)
+      ..fetchLimit=count!
+      ..offset=end!;
 
     if (name != null) {
       query.where((h) => h.name).contains(name, caseSensitive: false);
     }
 
     final posts = await query.fetch();
+      
 
     return Response.ok(posts);
   }

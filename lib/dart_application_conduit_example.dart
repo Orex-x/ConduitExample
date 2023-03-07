@@ -4,11 +4,6 @@ import 'package:dart_application_conduit_example/controllers/auth_controller.dar
 import 'package:dart_application_conduit_example/controllers/post_controller.dart';
 import 'package:dart_application_conduit_example/controllers/category_controller.dart';
 
-import 'package:dart_application_conduit_example/models/post.dart';
-import 'package:dart_application_conduit_example/models/user.dart';
-import 'package:dart_application_conduit_example/models/category.dart';
-import 'models/category.dart';
-import 'models/user.dart';
 
 class DatabaseChannel extends ApplicationChannel {
   late final ManagedContext context;
